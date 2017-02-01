@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.accenture.microservices.emp.details.data.EmployeeDetails;
 import com.accenture.microservices.emp.details.data.repository.EmployeeRepository;
 import com.accenture.microservices.emp.details.service.EmpDetailsService;
+import com.accenture.microservices.emp.details.service.RequestCorrelation;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -46,6 +47,7 @@ public class EmpDetailsController {
 		if(null!=emplDetails){
 			log.info("EmpDetailsController getEmployeeDetails result" + emplDetails.toString());
 		}
+		log.info("Correl: "+RequestCorrelation.getId());
 		return emplDetails;
 	}
 	
